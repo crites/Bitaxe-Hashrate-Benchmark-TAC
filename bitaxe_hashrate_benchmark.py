@@ -5,14 +5,14 @@ import signal
 import sys
 import argparse
 #
-# Tom Crites was here
+# Tom Crites was here 6/22  
 #
 # ANSI Color Codes
 GREEN = "\033[92m"
 YELLOW = "\033[93m"
 RED = "\033[91m"
 RESET = "\033[0m"
-
+ 
 # Add this before the configuration section
 def parse_arguments():
     parser = argparse.ArgumentParser(description='Bitaxe Hashrate Benchmark Tool')
@@ -72,7 +72,7 @@ if initial_frequency < min_allowed_frequency:
     raise ValueError(RED + f"Error: Initial frequency is below the minimum allowed value of {min_allowed_frequency}MHz." + RESET)
 
 if benchmark_time / sample_interval < 7:
-    raise ValueError(RED + f"Error: Benchmark time is too short. Please increase the benchmark time or decrease the sample interval. At least 7 samples are required." + RESET)
+    raise ValueError(RED + "Error: Benchmark time is too short. Please increase the benchmark time or decrease the sample interval. At least 7 samples are required." + RESET)
 
 # Results storage
 results = []
