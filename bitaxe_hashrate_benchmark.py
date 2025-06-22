@@ -6,6 +6,7 @@ import sys
 import argparse
 #
 # Tom Crites was here 6/22  5:17  5:29
+#
 # ANSI Color Codes
 GREEN = "\033[92m"
 YELLOW = "\033[93m"
@@ -108,7 +109,7 @@ def fetch_default_settings():
 system_reset_done = False
 
 def handle_sigint(signum, frame):
-    global system_reset_done, handling_interrupt
+    global system_reset_done, handling_interrupt    # pylint: disable=global-statement
     
     # If we're already handling an interrupt or have completed reset, ignore this signal
     if handling_interrupt or system_reset_done:
