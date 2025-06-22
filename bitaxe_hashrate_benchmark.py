@@ -286,7 +286,7 @@ def benchmark_iteration(core_voltage, frequency):
         
         # Add protection against zero hashrate
         if average_hashrate > 0:
-            efficiency_jth = average_power / (average_hashrate / 1_000)
+            efficiency_jth = average_power / (average_hashrate / 1_000)   # pylint: disable=redefined-outer-name
         else:
             print(RED + "Warning: Zero hashrate detected, skipping efficiency calculation" + RESET)
             return None, None, None, False, None, "ZERO_HASHRATE"
@@ -308,7 +308,7 @@ def benchmark_iteration(core_voltage, frequency):
 def save_results():
     try:
         # Extract IP from bitaxe_ip global variable and remove 'http://'
-        ip_address = bitaxe_ip.replace('http://', '')
+        ip_address = bitaxe_ip.replace('http://', '')     # pylint: disable=redefined-outer-name
         filename = f"bitaxe_benchmark_results_{ip_address}.json"
         with open(filename, "w") as f:
             json.dump(results, f, indent=4)
